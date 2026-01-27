@@ -15,6 +15,11 @@ const App = () => {
     setUsers((prev) => [...prev, newUser]);
   };
 
+  const removeUser = (id: string) => {
+    const newUsers = users.filter((user) => user.id !== id);
+    setUsers(newUsers);
+  };
+
   return (
     <div
       className='min-h-screen w-screen grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-base-200 p-6'
@@ -26,7 +31,7 @@ const App = () => {
       </div>
       <div className='card shadow-xl bg-base-300 lg:col-span-2'>
         <div className='card-body'>
-          <Userlist users={users} />
+          <Userlist users={users} onDelete={removeUser} />
         </div>
       </div>
     </div>
