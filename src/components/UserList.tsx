@@ -9,7 +9,7 @@ interface UserListProps {
 const Userlist: React.FC<UserListProps> = ({ users, onDelete }) => {
   if (!users.length) {
     return (
-      <h1 className='font-title text-2xl md:text-3xl lg:text-4xl font-bold'>
+      <h1 className='font-title text-2xl md:text-3xl lg:text-4xl font-semibold'>
         No user, list is empty
       </h1>
     );
@@ -19,7 +19,7 @@ const Userlist: React.FC<UserListProps> = ({ users, onDelete }) => {
     <ul className='list bg-base-100 rounded-box'>
       {users.map((user) => (
         <li
-          className='list-row hover:shadow-lg transition-all duration-300'
+          className='list-row hover:shadow-2xl transition-all duration-300'
           key={user.id}
           data-testid='user-item'>
           <div className='list-col-grow cursor-pointer'>
