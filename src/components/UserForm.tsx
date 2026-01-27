@@ -16,12 +16,12 @@ const UserForm: React.FC<UserFormProps> = ({ onAddUser }) => {
     e.preventDefault();
 
     if (!emailRegex.test(email)) {
-      setError("Please enter correct email.");
+      setError("Invalid email address. Please enter correct email.");
       return;
     }
 
     setError("");
-    onAddUser({ name, email});
+    onAddUser({ name, email });
     setName("");
     setEmail("");
   };
@@ -30,6 +30,7 @@ const UserForm: React.FC<UserFormProps> = ({ onAddUser }) => {
       <div className='fieldset'>
         <label className='label'>name:</label>
         <input
+          data-testid='name'
           type='text'
           className='input'
           value={name}
@@ -39,6 +40,7 @@ const UserForm: React.FC<UserFormProps> = ({ onAddUser }) => {
       <div className='fieldset'>
         <label className='label'>email:</label>
         <input
+          data-testid='email'
           type='text'
           className={`input ${error && "border-error text-error"}`}
           value={email}
