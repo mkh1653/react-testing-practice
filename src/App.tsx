@@ -4,29 +4,7 @@ import Userlist from "./components/UserList";
 import type { User } from "./components/types/User";
 
 const App = () => {
-  const [users, setUsers] = useState<User[]>([
-    {id: "1", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "2", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "3", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "4", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "5", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "6", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "7", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "8", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "9", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "10", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "11", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "12", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "13", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "14", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "15", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "16", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "17", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "18", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "19", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "20", name: "mmm", email: "mmmm@gmail.com"},
-    {id: "21", name: "mmm", email: "mmmm@gmail.com"},
-  ]);
+  const [users, setUsers] = useState<User[]>([]);
 
   const addUser = ({ name, email }: { name: string; email: string }) => {
     const newUser = {
@@ -59,7 +37,7 @@ const App = () => {
           <h1 className='card-title capitalize font-bold text-5xl mb-4'>
             users list
           </h1>
-          <div className="overflow-y-auto">
+          <div className='overflow-y-auto'>
             <Userlist users={users} onDelete={removeUser} />
           </div>
         </div>
